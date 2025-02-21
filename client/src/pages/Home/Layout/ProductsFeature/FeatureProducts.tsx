@@ -1,16 +1,13 @@
-import React from "react";
 import { Card } from "../../../../components";
 import DetailedCard from "../../../../components/Home/productsFeature/DetailedCard";
 import { useContext } from "react";
 import { landingPageContext } from "../../context/LandingPageContext";
-type Props = {};
 
-const FeatureProducts = (props: Props) => {
+const FeatureProducts = () => {
   const context = useContext(landingPageContext);
   if (!context) {
     throw new Error("FeatureProducts must be used within a LandingPageContextProvider");
   }
-  const { state } = context;
   const showProducts = [
     {
       id: 1,

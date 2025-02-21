@@ -1,7 +1,5 @@
-import React from 'react'
 import { useContext } from 'react';
 import { landingPageContext } from '../pages/Home/context/LandingPageContext';
-import LoadingIcon from '../shared/LoadingIcon';
 import { toast } from 'react-toastify';
 type Props = {
     cardImage: string;

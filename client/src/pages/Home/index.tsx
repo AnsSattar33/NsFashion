@@ -1,10 +1,8 @@
-import React from "react";
 import Slider from "./Layout/Slider";
 import FeatureProducts from "./Layout/ProductsFeature/FeatureProducts";
 
-type Props = {};
 
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <div>
       <Slider />

@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CartProductList from './CartProductList';
 import CartCheckoutRow from './CartCheckoutRow';
-import CartRecommendationList from './CartRecommendationList';
 
-type Props = {}
-
-const Cart = (props: Props) => {
+const Cart = () => {
     const [cart, setCart] = useState<any>(null);
 
     useEffect(() => {
@@ -22,14 +19,14 @@ const Cart = (props: Props) => {
         fetchCart();
     }, []);
 
-    const handleAddItem = async (productId: string, quantity: number) => {
-        try {
-            const response = await axios.post('/api/cart/add', { userId: 'userId', productId, quantity });
-            setCart(response.data);
-        } catch (error) {
-            console.error('Error adding item to cart:', error);
-        }
-    };
+    // const handleAddItem = async (productId: string, quantity: number) => {
+    //     try {
+    //         const response = await axios.post('/api/cart/add', { userId: 'userId', productId, quantity });
+    //         setCart(response.data);
+    //     } catch (error) {
+    //         console.error('Error adding item to cart:', error);
+    //     }
+    // };
 
     const handleRemoveItem = async (productId: string) => {
         try {

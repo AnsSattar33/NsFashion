@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { landingPageContext } from '../../pages/Home/context/LandingPageContext';
 
 type Props = {

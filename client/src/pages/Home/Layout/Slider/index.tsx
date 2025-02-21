@@ -1,15 +1,14 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import {
   SliderImages,
   SliderPagination,
 } from "../../../../components/Home/slider";
 import { landingPageContext } from "../../context/LandingPageContext";
 
-type Props = {};
 
 type SliderKeys = "jeans" | "shirts" | "leather_jackets" | "sweaters";
 
-const Slider = (props: Props) => {
+const Slider = () => {
   const context = useContext(landingPageContext);
 
   if (!context) {

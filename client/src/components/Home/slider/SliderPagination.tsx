@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import { landingPageContext } from "../../../pages/Home/context/LandingPageContext";
 
-type Props = {};
 
-const SliderPagination = (props: Props) => {
+const SliderPagination = () => {
   const [slider, setSlider] = React.useState("jeans");
   const context = useContext(landingPageContext);
 
@@ -13,7 +12,7 @@ const SliderPagination = (props: Props) => {
     );
   }
 
-  const { state, dispatch } = context;
+  const { dispatch } = context;
 
   return (
     <div className="">
