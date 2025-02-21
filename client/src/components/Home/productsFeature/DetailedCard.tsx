@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
-type Props = {}
 
-const DetailedCard = (props: Props) => {
+const DetailedCard = () => {
 
     const [quantity, setQuantity] = useState(1);
 

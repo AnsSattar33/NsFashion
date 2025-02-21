@@ -1,13 +1,11 @@
-import React from 'react'
 import { IoSearch } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
 import { BsCart4 } from "react-icons/bs";
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { landingPageContext } from '../../pages/Home/context/LandingPageContext';
-type Props = {}
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
     const context = useContext(landingPageContext);
     if (!context) {
         throw new Error(

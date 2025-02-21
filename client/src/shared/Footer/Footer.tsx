@@ -1,9 +1,7 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-type Props = {}
 
-const Footer = (props: Props) => {
+const Footer = () => {
     return (
         <footer className="bg-red-400 text-white p-4">
             <h1 className="text-center text-2xl mb-4">NsFashion.pk</h1>

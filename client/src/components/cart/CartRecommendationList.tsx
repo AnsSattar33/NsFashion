@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-const CartRecommendationList = (props: Props) => {
+const CartRecommendationList = () => {
     return (
         <div>CartRecommendationList</div>
     )
