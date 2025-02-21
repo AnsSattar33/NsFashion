@@ -1,4 +1,3 @@
-import React from "react";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 type Props = {
