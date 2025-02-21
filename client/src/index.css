@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+body {
+  @apply bg-gray-100 font-sans antialiased;
+}
+
+@layer components {
+  .btn {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  }
+
+  .slider-pagination {
+    @apply text-black font-bold py-2 px-4 rounded;
+  }
+
+  .h1 {
+    @apply text-3xl font-semibold container mx-auto my-10;
+  }
+
+  .cartBtn {
+    @apply hover:bg-red-400 text-black border border-black hover:text-white hover:border-white font-bold py-2 my-2 px-4 rounded;
+  }
+}
