@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import LazyImage from '../../../shared/LazyImage';
 
 const DetailedCard = () => {
 
@@ -19,7 +20,7 @@ const DetailedCard = () => {
             <div className='flex justify-between items-center py-10 container mx-auto'>
                 <div className='flex justify-start items-center py-10 container mx-auto'>
                     <div>
-                        <img className='w-full h-full self-start' src="/images/leather_jacket.png" alt="Jean" />
+                        <LazyImage className='w-full h-full self-start' src="/images/leather_jacket.png" alt="Jean" />
                     </div>
                     <div className='capitalize'>
                         <p>nsFashion.pk</p>
@@ -59,7 +60,7 @@ const DetailedCard = () => {
                 </div>
                 <div className='flex justify-start items-center py-10 container mx-auto'>
                     <div>
-                        <img className='w-full h-full self-start' src="/images/shirt.png" alt="Jean" />
+                        <LazyImage className='w-full h-full self-start' src="/images/shirt.png" alt="Jean" />
                     </div>
                     <div className='capitalize'>
                         <p>nsFashion.pk</p>

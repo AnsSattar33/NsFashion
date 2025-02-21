@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { landingPageContext } from '../pages/Home/context/LandingPageContext';
 import { toast } from 'react-toastify';
+import LazyImage from '../shared/LazyImage';
 type Props = {
     cardImage: string;
     cardTitle: string;
@@ -42,7 +43,7 @@ const Card = ({ cardImage, cardTitle, cardDescription, cardTags, cardId, product
     return (
         <div className='mb-10'>
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                <img className="w-full h-96" src={cardImage} alt={cardTitle} />
+                <LazyImage className='w-full h-96' src={cardImage} alt={cardTitle} />
                 <div className="px-6 py-4">
                     <div className="font-bold text-xl mb-2">{cardTitle}</div>
                     <p className="text-gray-700 text-base">

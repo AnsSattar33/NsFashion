@@ -1,4 +1,5 @@
 import { MdOutlineArrowForwardIos } from "react-icons/md";
+import LazyImage from "../../../shared/LazyImage";
 
 type Props = {
   backgroundImage: string;
@@ -42,7 +43,7 @@ const SliderImages = ({
           </div>
         </div>
         <div>
-          <img src={mainImage} className="w-96 opacity-100" alt="jean" />
+          <LazyImage src={mainImage} className="w-96 opacity-100" alt="jean" />
         </div>
       </div>
     </div>

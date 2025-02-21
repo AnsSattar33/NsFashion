@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { landingPageContext } from '../../pages/Home/context/LandingPageContext';
+import LazyImage from '../../shared/LazyImage';
 
 type Props = {
 
@@ -38,7 +39,7 @@ const CartProductList = ({ onRemoveItem }: Props) => {
             {uniqueCart.map((item: any) => (
                 <div className='card flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden mb-4' key={item.cardId}>
                     <div className='card-image '>
-                        <img src={item?.cardImage} alt='product' className='w-40 object-cover' />
+                        <LazyImage src={item?.cardImage} alt='product' className='w-40 object-cover' />
                     </div>
                     <div className='card-content p-4 md:w-2/3'>
                         <span className='card-title text-xl font-bold mb-2'>{item.cardTitle}</span>
