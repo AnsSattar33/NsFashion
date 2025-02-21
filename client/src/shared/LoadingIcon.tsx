@@ -1,9 +1,6 @@
-import React from 'react'
 import { PiSpinner } from "react-icons/pi";
 
-type Props = {}
-
-const LoadingIcon = (props: Props) => {
+const LoadingIcon = () => {
     return (
         <div>
             <PiSpinner size={16} />
