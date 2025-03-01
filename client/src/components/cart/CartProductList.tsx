@@ -2,12 +2,7 @@ import { useContext } from 'react';
 import { landingPageContext } from '../../pages/Home/context/LandingPageContext';
 import LazyImage from '../../shared/LazyImage';
 
-type Props = {
-
-    onRemoveItem: (productId: string) => void;
-}
-
-const CartProductList = ({ onRemoveItem }: Props) => {
+const CartProductList = () => {
     const context = useContext(landingPageContext);
 
     if (!context) {
@@ -19,9 +14,10 @@ const CartProductList = ({ onRemoveItem }: Props) => {
     const uniqueCart = cart.reduce((acc: any, item: any) => {
         const existingItem = acc.find((i: any) => i.cardId === item.cardId);
         if (existingItem) {
-            existingItem.quantity += item.quantity;
+            existingItem.productQuantity += item.productQuantity;
+            existingItem.productPrice += item.productPrice;
         } else {
-            acc.push({ ...item });
+            acc.push({ ...item, unitPrice: item.productPrice / item.productQuantity });
         }
         return acc;
     }, []);
@@ -31,9 +27,22 @@ const CartProductList = ({ onRemoveItem }: Props) => {
     };
 
     const handleMinusItem = (productId: string) => {
+        const item = uniqueCart.find((i: any) => i.cardId === productId);
+        if (item) {
+            item.productPrice -= item.unitPrice;
+        }
         dispatch({ type: 'MINUS_ITEM', payload: productId });
     };
-    console.log("uniqueCart = ", uniqueCart)
+
+    const onRemoveItem = (productId: string) => {
+        dispatch({ type: 'REMOVE_ITEM', payload: productId });
+        dispatch({ type: 'REMOVE_ITEM_FROM_CART', payload: 1 })
+    };
+
+    const totalItems = uniqueCart.reduce((acc: number, item: any) => acc + item.productQuantity, 0);
+    const totalPrice = uniqueCart.reduce((acc: number, item: any) => {
+        return acc + (Number(item.productPrice) || 0);
+    }, 0);
     return (
         <div className="flex flex-wrap gap-8">
             {uniqueCart.map((item: any) => (
@@ -55,9 +64,16 @@ const CartProductList = ({ onRemoveItem }: Props) => {
                             <span className='text-lg font-semibold'>{item.productQuantity}</span>
                             <button onClick={() => handleMinusItem(item?.cardId)} className='minus-button bg-yellow-500 text-white px-4 py-2 rounded'>-</button>
                         </div>
+                        <div className='card-price mt-4'>
+                            <span className='text-lg font-semibold'>Price: ${item?.productPrice}</span>
+                        </div>
                     </div>
                 </div>
             ))}
+            <div className="w-full mt-4">
+                <span className="text-xl font-bold">Total Items: {totalItems}</span>
+                <span className="text-xl font-bold ml-4">Total Price: ${totalPrice}</span>
+            </div>
         </div>
     );
 }

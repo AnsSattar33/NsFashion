@@ -3,7 +3,7 @@ import { reducer } from "./ReducerFunc";
 
 type State = {
   radioButtonSelected: string;
-  totalCartValue: number;
+  totalCartItem: number;
   productsQuantity: number[];
   isLoading: boolean;
   cart: any[];
@@ -25,7 +25,7 @@ type Props = {
 const initState: State = {
   radioButtonSelected: "jeans",
   productsQuantity: [],
-  totalCartValue: 0,
+  totalCartItem: 0,
   isLoading: false,
   cart: [],
 };

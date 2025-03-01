@@ -28,20 +28,13 @@ const Cart = () => {
     //     }
     // };
 
-    const handleRemoveItem = async (productId: string) => {
-        try {
-            const response = await axios.post('/api/cart/remove', { userId: 'userId', productId });
-            setCart(response.data);
-        } catch (error) {
-            console.error('Error removing item from cart:', error);
-        }
-    };
+
 
     return (
         <div className='cart'>
             <h2 className='text-4xl font-semibold p-4'>Your Cart</h2>
             <div className='flex justify-around p-4'>
-                <CartProductList onRemoveItem={handleRemoveItem} />
+                <CartProductList />
                 <CartCheckoutRow cart={cart} />
             </div>
             {/* <CartRecommendationList /> */}

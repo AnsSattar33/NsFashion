@@ -5,7 +5,11 @@ export const reducer = (state: any, action: any) => {
                 ...state,
                 cart: state.cart.map((item: any) =>
                     item.cardId === action.payload
-                        ? { ...item, productQuantity: item.productQuantity + 1 }
+                        ? {
+                            ...item,
+                            productQuantity: item.productQuantity + 1,
+                            productPrice: Number(item.productPrice) + item.productPrice
+                        }
                         : item
                 ),
             };
@@ -14,9 +18,14 @@ export const reducer = (state: any, action: any) => {
                 ...state,
                 cart: state.cart.map((item: any) =>
                     item.cardId === action.payload && item.productQuantity > 1
-                        ? { ...item, productQuantity: item.productQuantity - 1 }
+                        ? {
+                            ...item,
+                            productQuantity: item.productQuantity - 1,
+                            productPrice: Number(item.productPrice) - item.productPrice / item.productQuantity
+                        }
                         : item
                 ),
+
             };
         case 'ADD_ITEM_TO_CART':
             const itemExists = state.cart.some((item: any) => item.cardId === action.payload.cardId);
@@ -25,17 +34,29 @@ export const reducer = (state: any, action: any) => {
             }
             return {
                 ...state,
-                cart: [...state.cart, action.payload],
+                cart: [...state.cart, { ...action.payload, productQuantity: 1 }],
             };
         case 'UPDATE_TOTAL_CART_VALUE':
             return {
                 ...state,
-                totalCartValue: state.totalCartValue + action.payload,
+                totalCartItem: state.totalCartItem + action.payload,
+                totalItems: state.cart.reduce((acc: number, item: any) => acc + item.productQuantity, 0)
             };
         case 'SET_RADIO_BUTTON':
             return {
                 ...state,
                 radioButtonSelected: action.payload,
+            };
+        case 'REMOVE_ITEM':
+            return {
+                ...state,
+                cart: state.cart.filter((item: any) => item.cardId !== action.payload),
+            };
+        case 'REMOVE_ITEM_FROM_CART':
+
+            return {
+                ...state,
+                totalCartItem: state.totalCartItem - 1
             };
         default:
             return state;

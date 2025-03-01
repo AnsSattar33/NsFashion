@@ -13,7 +13,6 @@ const Navbar = () => {
         );
     }
     const { state } = context;
-    console.log(state?.totalCartValue)
     return (
         <div className='flex flex-col items-center justify-center'>
             <div className='flex justify-between container mx-auto py-8 items-center'>
@@ -32,7 +31,7 @@ const Navbar = () => {
                     <NavLink to="/cart" title='Cart'>
                         <div title='Cart' className='relative cursor-pointer'>
                             <BsCart4 size={28} />
-                            <p className='bg-white absolute left-4 px-2 top-3 py-0.5 text-red-400 rounded-full text-center'>{state?.totalCartValue}</p>
+                            <p className='bg-white absolute left-4 px-2 top-3 py-0.5 text-red-400 rounded-full text-center'>{state?.totalCartItem}</p>
                         </div>
                     </NavLink>
                 </div>

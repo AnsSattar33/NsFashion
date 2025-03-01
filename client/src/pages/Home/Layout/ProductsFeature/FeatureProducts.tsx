@@ -15,7 +15,7 @@ const FeatureProducts = () => {
       description: "Hello Pakistan i am here to sell ehheeh",
       tags: ["jean", "best jean", "keilvin jean"],
       quantity: 0,
-      price: '1200',
+      price: 1200,
       image: "/images/jean2.png",
     },
     {
@@ -24,7 +24,7 @@ const FeatureProducts = () => {
       description: "Hello Pakistan i am here to sell ehheeh",
       tags: ["jean", "best jean", "keilvin jean"],
       quantity: 0,
-      price: '900',
+      price: 2400,
       image: "/images/shirt.png",
     },
     {
@@ -33,7 +33,7 @@ const FeatureProducts = () => {
       description: "Hello Pakistan i am here to sell ehheeh",
       tags: ["jean", "best jean", "keilvin jean"],
       quantity: 0,
-      price: '2400',
+      price: 2400,
       image: "/images/leather_jacket.png",
     },
     {
@@ -42,7 +42,7 @@ const FeatureProducts = () => {
       description: "Hello Pakistan i am here to sell ehheeh",
       tags: ["jean", "best jean", "keilvin jean"],
       quantity: 0,
-      price: '1700',
+      price: 1700,
       image: "/images/sweater2.png",
     },
     {
@@ -51,7 +51,7 @@ const FeatureProducts = () => {
       description: "Hello Pakistan i am here to sell ehheeh",
       tags: ["jean", "best jean", "keilvin jean"],
       quantity: 0,
-      price: '1100',
+      price: 1100,
       image: "/images/jeanPng.jpeg",
     },
     {
@@ -60,7 +60,7 @@ const FeatureProducts = () => {
       description: "Hello Pakistan i am here to sell ehheeh",
       tags: ["jean", "best jean", "keilvin jean"],
       quantity: 0,
-      price: '2400',
+      price: 2400,
       image: "/images/leather_jacket.png",
     },
     {
@@ -69,7 +69,7 @@ const FeatureProducts = () => {
       description: "Hello Pakistan i am here to sell ehheeh",
       tags: ["jean", "best jean", "keilvin jean"],
       quantity: 0,
-      price: '1700',
+      price: 1700,
       image: "/images/sweater2.png",
     },
     {
@@ -78,7 +78,7 @@ const FeatureProducts = () => {
       description: "Hello Pakistan i am here to sell ehheeh",
       tags: ["jean", "best jean", "keilvin jean"],
       quantity: 0,
-      price: '1100',
+      price: 1100,
       image: "/images/jeanPng.jpeg",
     }
   ]

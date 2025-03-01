@@ -9,7 +9,7 @@ type Props = {
     cardTags: string[];
     cardId: number;
     productQuantity: number
-    productPrice: string
+    productPrice: number
 }
 
 const Card = ({ cardImage, cardTitle, cardDescription, cardTags, cardId, productPrice, productQuantity }: Props) => {
@@ -27,13 +27,13 @@ const Card = ({ cardImage, cardTitle, cardDescription, cardTags, cardId, product
         try {
             const itemExists = state.cart.some((item: any) => item.cardId === cardId);
             if (itemExists) {
-                toast.success('item already added to cart')
+                toast.error(`${cardTitle} already added to cart`)
                 return;
             }
-            const cartItems = { cardImage, cardTitle, cardDescription, cardTags, cardId, productPrice, productQuantity }
+            const cartItems = { cardImage, cardTitle, cardDescription, cardTags, cardId, productPrice, productQuantity: 1 }
             dispatch({ type: 'ADD_ITEM_TO_CART', payload: cartItems });
             dispatch({ type: 'UPDATE_TOTAL_CART_VALUE', payload: 1 });
-            toast.success('item added to cart')
+            toast.success(`${cardTitle} added to cart`)
         } catch (error) {
             console.error('Error adding item to cart:', error);
             toast.error(error instanceof Error ? error.message : 'An error occurred');
