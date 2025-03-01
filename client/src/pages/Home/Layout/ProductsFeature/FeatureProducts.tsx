@@ -94,7 +94,6 @@ const FeatureProducts = () => {
           cardDescription={product.description}
           cardTitle={product.title}
           cardTags={product.tags}
-          productQuantity={product.quantity}
           productPrice={product.price}
         />
       ))}

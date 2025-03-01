@@ -8,11 +8,10 @@ type Props = {
     cardDescription: string;
     cardTags: string[];
     cardId: number;
-    productQuantity: number
     productPrice: number
 }
 
-const Card = ({ cardImage, cardTitle, cardDescription, cardTags, cardId, productPrice, productQuantity }: Props) => {
+const Card = ({ cardImage, cardTitle, cardDescription, cardTags, cardId, productPrice }: Props) => {
     const context = useContext(landingPageContext);
 
     if (!context) {
