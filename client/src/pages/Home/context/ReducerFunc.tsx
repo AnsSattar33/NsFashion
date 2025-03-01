@@ -56,7 +56,7 @@ export const reducer = (state: any, action: any) => {
 
             return {
                 ...state,
-                totalCartItem: state.totalCartItem - 1
+                totalCartItem: state.totalCartItem - 1,
             };
         default:
             return state;
