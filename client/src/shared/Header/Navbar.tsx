@@ -41,7 +41,7 @@ const Navbar = () => {
                     <NavLink to="/" className="hover:underline hover:text-white">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/shop" className="hover:underline hover:text-white">Shop</NavLink>
+                    <NavLink to="/dashboard" className="hover:underline hover:text-white">Dashboard</NavLink>
                 </li>
                 <li>
                     <NavLink to="/drinkware" className="hover:underline hover:text-white">Drinkware</NavLink>
@@ -69,4 +69,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;

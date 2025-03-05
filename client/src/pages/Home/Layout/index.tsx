@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../../../shared/Header/Navbar";
 import Footer from "../../../shared/Footer/Footer";
 import LandingPageContextProvider from "../context/LandingPageContext";
+
 import { ToastContainer } from "react-toastify";
 
 const HomePageLayout: React.FC = () => {
